@@ -1,0 +1,58 @@
+.loading-screen{
+    background:#000;
+    color:#00ff88;
+    width:100%;
+    height:100vh;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    font-family:"Consolas",monospace;
+}
+
+.loading-screen h1{
+    margin-bottom:40px;
+    letter-spacing:4px;
+}
+
+.progress-bar{
+
+    width:420px;
+    max-width:90%;
+
+    height:12px;
+
+    border:1px solid #00ff88;
+
+    margin-bottom:10px;
+
+}
+
+.progress{
+
+    width:0%;
+
+    height:100%;
+
+    background:#00ff88;
+
+    transition:0.4s;
+
+}
+
+.percent{
+
+    margin-bottom:35px;
+
+}
+
+.log{
+
+    width:420px;
+    max-width:90%;
+
+    line-height:2;
+
+}
