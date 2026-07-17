@@ -257,7 +257,12 @@ input{
 
 }
 
-@media(max-width:900px){
+@media(max-width:900px)
+
+}
+
+{
+    
 
 .container{
 
@@ -339,4 +344,4 @@ input{
     color:#9EE8C5;
 
 }
-}
+
