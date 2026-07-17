@@ -1,331 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>EDEN Bio Conservation</title>
+<title>Eden Bio Conservation</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-<style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-body{
-
-    <body>
-
-<div class="container">
-
-<div class="left">
-
-<div class="logo">
-EDEN
-</div>
-
-<div class="subtitle">
-Bio Conservation<br>
-Internal Access Terminal
-</div>
-
-<div class="system">
-MOTHER EDEN SYSTEM
-</div>
-
-<div class="notice">
-AUTHORIZED PERSONNEL ONLY
-</div>
-
-<div id="loginForm" style="display:none;">
-
-<label>Employee ID</label>
-<input type="text">
-
-<label>Password</label>
-<input type="password">
-
-<button onclick="location.href='home.html'">
-LOGIN
-</button>
-
-</div>
-
-<button id="accessBtn" onclick="showLogin()">
-ACCESS TERMINAL
-</button>
-
-</div>
-
-<div class="right">
-
-<div class="logTitle">
-ACCESS LOG
-</div>
-
-<div id="log"></div>
-
-</div>
-
-</div>
-
-<script>
-
-function showLogin(){
-
-document.getElementById("accessBtn").style.display="none";
-
-document.getElementById("loginForm").style.display="block";
-
-}
-
-const logs=[
-
-"Lucile accessed Director Terminal.",
-"Noct entered Medical Wing.",
-"Specimen transfer completed.",
-"Research database synchronized.",
-"Creature feeding completed.",
-"Security patrol initiated.",
-"Containment inspection completed.",
-"Mirei uploaded research report.",
-"Emergency drill completed.",
-"Archive updated."
-
-];
-
-const logBox=document.getElementById("log");
-
-function addLog(){
-
-const now=new Date();
-
-const time=now.toLocaleTimeString();
-
-const text=document.createElement("div");
-
-text.innerHTML=time+"<br>"+logs[Math.floor(Math.random()*logs.length)]+"<br><br>";
-
-logBox.prepend(text);
-
-while(logBox.children.length>6){
-
-logBox.removeChild(logBox.lastChild);
-
-}
-
-}
-
-addLog();
-
-setInterval(addLog,3000);
-
-</script>
-
-</body>
-}
-
-.container{
-
-    width:900px;
-
-    max-width:90%;
-
-    display:flex;
-
-    justify-content:space-between;
-
-    gap:60px;
-
-}
-
-.left{
-
-    flex:1;
-
-}
-
-.right{
-
-    width:300px;
-
-}
-
-.logo{
-
-    font-size:42px;
-
-    font-weight:600;
-
-    letter-spacing:8px;
-
-    margin-bottom:10px;
-
-}
-
-.subtitle{
-
-    color:#9ea6b5;
-
-    margin-bottom:40px;
-
-}
-
-.system{
-
-    font-family:'Roboto Mono',monospace;
-
-    color:#d5dbe5;
-
-    font-size:13px;
-
-    letter-spacing:2px;
-
-    margin-bottom:35px;
-
-}
-
-label{
-
-    display:block;
-
-    margin-top:20px;
-
-    margin-bottom:8px;
-
-    color:#b8c0cc;
-
-    font-size:14px;
-
-}
-
-input{
-
-    width:100%;
-
-    padding:14px;
-
-    background:#10141b;
-
-    border:1px solid #333;
-
-    color:white;
-
-    font-size:15px;
-
-}
-
-button{
-
-    margin-top:35px;
-
-    width:100%;
-
-    padding:15px;
-
-    background:transparent;
-
-    color:white;
-
-    border:1px solid white;
-
-    cursor:pointer;
-
-    transition:.3s;
-
-    letter-spacing:3px;
-
-}
-
-button:hover{
-
-    background:white;
-
-    color:black;
-
-}
-
-.notice{
-
-    margin-top:25px;
-
-    color:#777;
-
-    font-size:13px;
-
-}
-
-.logTitle{
-
-    font-family:'Roboto Mono',monospace;
-
-    letter-spacing:2px;
-
-    margin-bottom:20px;
-
-}
-
-#log{
-
-    font-family:'Roboto Mono',monospace;
-
-    color:#aeb6c3;
-
-    font-size:13px;
-
-    line-height:2;
-
-}
-@media (max-width: 768px){
-
-.container{
-
-    flex-direction:column;
-
-    gap:40px;
-
-}
-
-.right{
-
-    width:100%;
-
-}
-
-.logo{
-
-    font-size:60px;
-
-}
-
-input{
-
-    font-size:18px;
-
-}
-
-button{
-
-    font-size:18px;
-
-    padding:18px;
-
-}
-
-}
-</style>
+<link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
 
+<div class="background"></div>
+
 <div class="container">
 
-<div class="left">
+<div class="main">
 
 <div class="logo">
 
@@ -335,16 +33,43 @@ EDEN
 
 <div class="subtitle">
 
-Bio Conservation<br>
+Bio Conservation
+
+</div>
+
+<div class="terminal">
+
 Internal Access Terminal
 
 </div>
 
-<div class="system">
+<div class="mother">
 
 MOTHER EDEN SYSTEM
 
 </div>
+
+<div class="divider"></div>
+
+<div class="warning">
+
+AUTHORIZED PERSONNEL ONLY
+
+</div>
+
+<p class="description">
+
+Access to this network is restricted to Eden employees.
+
+</p>
+
+<button id="accessButton">
+
+ACCESS TERMINAL
+
+</button>
+
+<div id="loginArea" class="hidden">
 
 <label>Employee ID</label>
 
@@ -360,21 +85,13 @@ LOGIN
 
 </button>
 
-<div class="notice">
-
-Employee Authentication Required
-
 </div>
 
 </div>
 
-<div class="right">
+<div class="logPanel">
 
-<div class="logTitle">
-
-ACCESS LOG
-
-</div>
+<h3>ACCESS LOG</h3>
 
 <div id="log"></div>
 
@@ -382,50 +99,7 @@ ACCESS LOG
 
 </div>
 
-<script>
-
-const logs=[
-
-"Lucile accessed Director Terminal.",
-"Noct entered Medical Wing.",
-"Specimen transfer completed.",
-"Research database synchronized.",
-"Creature feeding completed.",
-"Security patrol initiated.",
-"Containment inspection completed.",
-"Mirei uploaded research report.",
-"Emergency drill completed.",
-"Archive updated."
-
-];
-
-const logBox=document.getElementById("log");
-
-function addLog(){
-
-const now=new Date();
-
-const time=now.toLocaleTimeString();
-
-const text=document.createElement("div");
-
-text.innerHTML=time+"<br>"+logs[Math.floor(Math.random()*logs.length)]+"<br><br>";
-
-logBox.prepend(text);
-
-while(logBox.children.length>6){
-
-logBox.removeChild(logBox.lastChild);
-
-}
-
-}
-
-addLog();
-
-setInterval(addLog,3000);
-
-</script>
+<script src="script.js"></script>
 
 </body>
 
