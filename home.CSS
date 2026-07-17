@@ -1,0 +1,123 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    background:#000;
+
+    color:#00ff88;
+
+    font-family:Consolas,monospace;
+
+    padding:30px;
+
+}
+
+.terminal{
+
+    max-width:900px;
+
+    margin:auto;
+
+    border:1px solid #00ff88;
+
+    padding:25px;
+
+}
+
+.header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:25px;
+
+}
+
+.title{
+
+    font-size:30px;
+
+    letter-spacing:3px;
+
+}
+
+.status{
+
+    color:#7dff7d;
+
+}
+
+.userInfo{
+
+    line-height:2;
+
+    margin-bottom:20px;
+
+}
+
+hr{
+
+    border:none;
+
+    border-top:1px solid #00ff88;
+
+    margin:25px 0;
+
+}
+
+section{
+
+    margin-bottom:35px;
+
+}
+
+section h2{
+
+    margin-bottom:15px;
+
+}
+
+button{
+
+    width:100%;
+
+    background:none;
+
+    color:#00ff88;
+
+    border:1px solid #00ff88;
+
+    padding:14px;
+
+    margin-bottom:12px;
+
+    text-align:left;
+
+    font-size:16px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    background:#00ff88;
+
+    color:#000;
+
+}
+
+.systemStatus{
+
+    line-height:2;
+
+}
