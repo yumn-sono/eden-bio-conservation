@@ -18,23 +18,115 @@
 
 body{
 
-    background:
-    radial-gradient(circle at top,#1a2338,#050608 75%);
+    <body>
 
-    color:white;
+<div class="container">
 
-    font-family:'Inter',sans-serif;
+<div class="left">
 
-    height:100vh;
+<div class="logo">
+EDEN
+</div>
 
-    display:flex;
+<div class="subtitle">
+Bio Conservation<br>
+Internal Access Terminal
+</div>
 
-    justify-content:center;
+<div class="system">
+MOTHER EDEN SYSTEM
+</div>
 
-    align-items:center;
+<div class="notice">
+AUTHORIZED PERSONNEL ONLY
+</div>
 
-    overflow:hidden;
+<div id="loginForm" style="display:none;">
 
+<label>Employee ID</label>
+<input type="text">
+
+<label>Password</label>
+<input type="password">
+
+<button onclick="location.href='home.html'">
+LOGIN
+</button>
+
+</div>
+
+<button id="accessBtn" onclick="showLogin()">
+ACCESS TERMINAL
+</button>
+
+</div>
+
+<div class="right">
+
+<div class="logTitle">
+ACCESS LOG
+</div>
+
+<div id="log"></div>
+
+</div>
+
+</div>
+
+<script>
+
+function showLogin(){
+
+document.getElementById("accessBtn").style.display="none";
+
+document.getElementById("loginForm").style.display="block";
+
+}
+
+const logs=[
+
+"Lucile accessed Director Terminal.",
+"Noct entered Medical Wing.",
+"Specimen transfer completed.",
+"Research database synchronized.",
+"Creature feeding completed.",
+"Security patrol initiated.",
+"Containment inspection completed.",
+"Mirei uploaded research report.",
+"Emergency drill completed.",
+"Archive updated."
+
+];
+
+const logBox=document.getElementById("log");
+
+function addLog(){
+
+const now=new Date();
+
+const time=now.toLocaleTimeString();
+
+const text=document.createElement("div");
+
+text.innerHTML=time+"<br>"+logs[Math.floor(Math.random()*logs.length)]+"<br><br>";
+
+logBox.prepend(text);
+
+while(logBox.children.length>6){
+
+logBox.removeChild(logBox.lastChild);
+
+}
+
+}
+
+addLog();
+
+setInterval(addLog,3000);
+
+</script>
+
+</body>
 }
 
 .container{
@@ -188,7 +280,43 @@ button:hover{
     line-height:2;
 
 }
+@media (max-width: 768px){
 
+.container{
+
+    flex-direction:column;
+
+    gap:40px;
+
+}
+
+.right{
+
+    width:100%;
+
+}
+
+.logo{
+
+    font-size:60px;
+
+}
+
+input{
+
+    font-size:18px;
+
+}
+
+button{
+
+    font-size:18px;
+
+    padding:18px;
+
+}
+
+}
 </style>
 
 </head>
