@@ -300,5 +300,43 @@ input{
     padding-top:30px;
 
 }
+.systemStatus{
 
+    position:fixed;
+
+    top:20px;
+
+    right:20px;
+
+    text-align:right;
+
+    z-index:1000;
+
+}
+
+.statusTitle{
+
+    font-family:'Roboto Mono',monospace;
+
+    font-size:11px;
+
+    letter-spacing:3px;
+
+    color:#7a8599;
+
+}
+
+.statusValue{
+
+    margin-top:4px;
+
+    font-family:'Roboto Mono',monospace;
+
+    font-size:15px;
+
+    letter-spacing:4px;
+
+    color:#9EE8C5;
+
+}
 }
